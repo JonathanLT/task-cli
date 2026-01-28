@@ -1,0 +1,21 @@
+[package]
+name = "task-cli"
+version = "0.1.0"
+edition = "2024"
+authors = ["Jonathan LOQUET <jonthan.lt@gmail.com>"]
+description = "Un gestionnaire de tâches CLI performant avec persistance SQLite"
+license = "MIT OR Apache-2.0"
+
+[dependencies]
+clap = { version = "4.5.55", features = ["derive", "cargo"] }  # Parsing d'arguments CLI
+serde = { version = "1.0.228", features = ["derive"] }  # Sérialisation
+serde_json = "1.0.149"                                  # Format JSON
+chrono = "0.4.43"                                      # Gestion des dates
+colored = "3.1.1"                                     # Couleurs dans le terminal
+directories = "6.0.0"                                 # Chemins système
+uuid = { version = "1.20.0", features = ["v4", "serde"] }
+rusqlite = { version = "0.32.1", features = ["bundled", "chrono", "uuid"] }  # SQLite
+
+[dev-dependencies]
+assert_cmd = "2.0.8"
+predicates = "2.1.5"
